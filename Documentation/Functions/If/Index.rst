@@ -9,7 +9,13 @@
 .. _if:
 
 if
-^^
+==
+
+.. contents::
+   :local:
+   :depth: 1
+
+
 
 Allows you to check multiple conditions.
 
@@ -20,6 +26,17 @@ single condition is false, the value returned is false.
 The returned value may still be negated by the ".negate"-property.
 
 Also check the explanations and the examples further below!
+
+Property details
+----------------
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+directReturn
+~~~~~~~~~~~~
 
 .. ### BEGIN~OF~TABLE ###
 
@@ -191,10 +208,9 @@ Also check the explanations and the examples further below!
 [tsref:->if]
 
 
-.. _if-explanation:
 
-Explanation
-"""""""""""
+What it does
+------------
 
 The "if"-function is a very odd way of returning true or false!
 Beware!
@@ -231,10 +247,33 @@ the result if the function in total would be false because the
 ".negate"-flag inverts the result!
 
 
+Implementation
+--------------
+
+- if__ in API__,
+- method ``checkIf`` in
+- class ``ContentObjectRenderer`` in
+- namespace :php:`namespace TYPO3\CMS\Frontend\ContentObject;` in
+- file :file:`ContentObjectRenderer.php` in
+- folder ``typo3/sysext/frontend/Classes/ContentObject``.
+
+__ http://typo3.org/api/typo3cms/
+
+
 .. _if-examples:
 
-Example:
-~~~~~~~~
+Examples for if
+---------------
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+.. if-example-render-new
+
+Example: Render NEW!
+~~~~~~~~~~~~~~~~~~~~
 
 This is a GIFBUILDER object that will write "NEW" on a menu-item if
 the field "newUntil" has a date less than the current date! ::
@@ -249,4 +288,3 @@ the field "newUntil" has a date less than the current date! ::
        negate = 1
      }
    …
-
