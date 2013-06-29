@@ -36,8 +36,7 @@ Properties
   ===================================================== ===================================================== ======= ==================
   Property                                              Data types                                            stdWrap Default
   ===================================================== ===================================================== ======= ==================
-  :ts:`imageLinkWrap =`                                 :ref:`data-type-boolean`                              yes       0
-  enable_ =                                             :ref:`data-type-boolean`                              yes       0
+  directReturn_ =                                       :ref:`data-type-boolean`                                      false
   stdWrap_ =                                            :ref:`stdwrap`                                        yes
   ===================================================== ===================================================== ======= ==================
 
@@ -59,61 +58,47 @@ directReturn
 If this property exists, no other conditions will be checked. Instead the 
 true/false of this value is returned. Can be used to set true/false with
 a TypoScript constant.
-
 @TODO: stdWrap since which version?
 
+isNull
+~~~~~~
+
+:ts:`isNull =` :ref:`stdWrap`
+
+If the resulting content of the stdWrap is null (NULL type in PHP) ...
+
+Since null values cannot be assigned in TypoScript, only the stdWrap
+features are available below this property.
+
+**Example:** ::
+
+   page.10 = COA_INT
+   page.10.10 = TEXT
+   page.10.10 {
+     if.isNull.field = description
+     value = No description available.
+   }
+
+This example returns "No description available.", if the content of
+the field "description" is NULL.
+
+isTrue
+~~~~~~
+
+:ts:`isTrue =` :ref:`stdWrap` / string
+
+If the content is "true".... (not empty string and not zero)
+
+isFalse
+~~~~~~~
+
+:ts:`isFalse = ` :ref:`stdWrap` / string
+
+If the content is "false"... (empty or zero)
+
+
+
 .. ### BEGIN~OF~TABLE ###
-
-.. container:: table-row
-
-   Property
-         isNull
-
-   Data type
-         stdWrap
-
-   Description
-         If the resulting content of the stdWrap is null (NULL type in PHP)
-         ...
-
-         Since null values cannot be assigned in TypoScript, only the stdWrap
-         features are available below this property.
-
-         **Example:** ::
-
-            page.10 = COA_INT
-            page.10.10 = TEXT
-            page.10.10 {
-              if.isNull.field = description
-              value = No description available.
-            }
-
-         This example returns "No description available.", if the content of
-         the field "description" is NULL.
-
-
-.. container:: table-row
-
-   Property
-         isTrue
-
-   Data type
-         string /stdWrap
-
-   Description
-         If the content is "true".... (not empty string and not zero)
-
-
-.. container:: table-row
-
-   Property
-         isFalse
-
-   Data type
-         string /stdWrap
-
-   Description
-         If the content is "false"... (empty or zero)
 
 
 .. container:: table-row
