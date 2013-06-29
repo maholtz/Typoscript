@@ -27,6 +27,22 @@ The returned value may still be negated by the ".negate"-property.
 
 Also check the explanations and the examples further below!
 
+
+Properties
+----------
+
+.. container:: ts-properties
+
+  ===================================================== ===================================================== ======= ==================
+  Property                                              Data types                                            stdWrap Default
+  ===================================================== ===================================================== ======= ==================
+  :ts:`imageLinkWrap =`                                 :ref:`data-type-boolean`                              yes       0
+  enable_ =                                             :ref:`data-type-boolean`                              yes       0
+  stdWrap_ =                                            :ref:`stdwrap`                                        yes
+  ===================================================== ===================================================== ======= ==================
+
+
+
 Property details
 ----------------
 
@@ -38,21 +54,15 @@ Property details
 directReturn
 ~~~~~~~~~~~~
 
+:ts:`directReturn =` :ref:`data-type-boolean`
+
+If this property exists, no other conditions will be checked. Instead the 
+true/false of this value is returned. Can be used to set true/false with
+a TypoScript constant.
+
+@TODO: stdWrap since which version?
+
 .. ### BEGIN~OF~TABLE ###
-
-.. container:: table-row
-
-   Property
-         directReturn
-
-   Data type
-         boolean
-
-   Description
-         If this property exists, no other conditions will be checked. Instead
-         the true/false of this value is returned. Can be used to set
-         true/false with a TypoScript constant.
-
 
 .. container:: table-row
 
